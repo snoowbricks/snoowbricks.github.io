@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnoowBricks — Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+  :root{
+    --snow:#f0f4f8;
+    --ice:#d6e4f0;
+    --brick:#c0392b;
+    --brick-dark:#922b21;
+    --charcoal:#1a1a2e;
+    --warm:#fff8f0;
+  }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--charcoal);
+    font-family:'DM Sans',sans-serif;
+    overflow:hidden;
+    position:relative;
+  }
+
+  /* Snowfall */
+  .snowflakes{position:fixed;inset:0;pointer-events:none;z-index:1}
+
+  .snowflake{
+    position:absolute;
+    top:-10px;
+    color:rgba(255,255,255,.7);
+    font-size:1rem;
+    animation:fall linear infinite, sway ease-in-out infinite;
+    will-change:transform;
+  }
+
+  @keyframes fall{
+    0%{transform:translateY(-10vh)}
+    100%{transform:translateY(105vh)}
+  }
+
+  @keyframes sway{
+    0%,100%{margin-left:0}
+    25%{margin-left:30px}
+    75%{margin-left:-30px}
+  }
+
+  /* Brick wall background pattern */
+  .wall{
+    position:fixed;inset:0;z-index:0;
+    opacity:.06;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        rgba(255,255,255,.3) 48px,
+        rgba(255,255,255,.3) 52px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(255,255,255,.3) 98px,
+        rgba(255,255,255,.3) 102px
+      );
+    background-size:200px 100px;
+  }
+  .wall::after{
+    content:'';position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        rgba(255,255,255,.3) 48px,
+        rgba(255,255,255,.3) 52px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(255,255,255,.3) 98px,
+        rgba(255,255,255,.3) 102px
+      );
+    background-size:200px 100px;
+    background-position:100px 50px;
+  }
+
+  /* Glow orbs */
+  .orb{
+    position:fixed;border-radius:50%;filter:blur(100px);z-index:0;
+    animation:pulse 6s ease-in-out infinite alternate;
+  }
+  .orb-1{width:500px;height:500px;background:rgba(192,57,43,.15);top:-10%;left:-10%}
+  .orb-2{width:400px;height:400px;background:rgba(100,160,220,.1);bottom:-10%;right:-10%;animation-delay:-3s}
+
+  @keyframes pulse{
+    0%{opacity:.6;transform:scale(1)}
+    100%{opacity:1;transform:scale(1.15)}
+  }
+
+  /* Main card */
+  .card{
+    position:relative;z-index:2;
+    text-align:center;
+    padding:4rem 3rem;
+    max-width:620px;
+    width:90%;
+    background:rgba(26,26,46,.6);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    box-shadow:
+      0 40px 80px rgba(0,0,0,.4),
+      inset 0 1px 0 rgba(255,255,255,.06);
+    animation:cardIn 1s cubic-bezier(.22,1,.36,1) forwards;
+    opacity:0;
+    transform:translateY(30px) scale(.97);
+  }
+
+  @keyframes cardIn{
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+
+  /* Brick icon row */
+  .bricks{
+    display:flex;gap:6px;justify-content:center;margin-bottom:2rem;
+    animation:bricksIn 1s .3s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes bricksIn{from{opacity:0;transform:translateY(10px)}}
+
+  .brick-block{
+    width:42px;height:22px;border-radius:4px;
+    background:var(--brick);
+    box-shadow:inset 0 -3px 0 var(--brick-dark), 0 2px 8px rgba(192,57,43,.3);
+    transition:transform .3s;
+  }
+  .brick-block:nth-child(2){background:#e67e22;box-shadow:inset 0 -3px 0 #d35400, 0 2px 8px rgba(230,126,34,.3)}
+  .brick-block:nth-child(4){background:#e67e22;box-shadow:inset 0 -3px 0 #d35400, 0 2px 8px rgba(230,126,34,.3)}
+  .brick-block:hover{transform:translateY(-4px) rotate(-3deg)}
+
+  /* Title */
+  .title{
+    font-family:'Dela Gothic One',sans-serif;
+    font-size:clamp(2rem,6vw,3.2rem);
+    color:var(--snow);
+    letter-spacing:-.02em;
+    line-height:1.15;
+    margin-bottom:.5rem;
+    animation:textIn 1s .5s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes textIn{from{opacity:0;transform:translateY(15px)}}
+
+  .title span{
+    background:linear-gradient(135deg,var(--brick),#e67e22);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+
+  .subtitle{
+    font-size:1.05rem;
+    color:rgba(214,228,240,.55);
+    font-style:italic;
+    margin-bottom:2.5rem;
+    animation:textIn 1s .7s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  /* Divider */
+  .divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,var(--brick),#e67e22);
+    border-radius:3px;
+    margin:0 auto 2rem;
+    animation:textIn 1s .8s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  /* Status badge */
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 22px;
+    border-radius:50px;
+    background:rgba(192,57,43,.12);
+    border:1px solid rgba(192,57,43,.25);
+    color:var(--snow);
+    font-size:.85rem;
+    font-weight:500;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    animation:textIn 1s .9s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  .badge-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--brick);
+    box-shadow:0 0 12px var(--brick);
+    animation:blink 1.5s ease-in-out infinite;
+  }
+
+  @keyframes blink{
+    0%,100%{opacity:1}
+    50%{opacity:.3}
+  }
+
+  /* Snow pile on card bottom */
+  .snow-pile{
+    position:absolute;
+    bottom:-1px;left:-1px;right:-1px;
+    height:20px;
+    background:radial-gradient(ellipse at 20% 100%,rgba(240,244,248,.25) 0%,transparent 60%),
+               radial-gradient(ellipse at 70% 100%,rgba(240,244,248,.2) 0%,transparent 50%),
+               radial-gradient(ellipse at 50% 100%,rgba(240,244,248,.15) 0%,transparent 70%);
+    border-radius:0 0 24px 24px;
+    pointer-events:none;
+  }
+
+  /* Footer */
+  .footer{
+    position:fixed;bottom:24px;left:0;right:0;
+    text-align:center;
+    color:rgba(214,228,240,.2);
+    font-size:.75rem;
+    z-index:2;
+    letter-spacing:.04em;
+  }
+</style>
+</head>
+<body>
+
+<div class="wall"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="snowflakes" id="snowflakes"></div>
+
+<div class="card">
+  <div class="bricks">
+    <div class="brick-block"></div>
+    <div class="brick-block"></div>
+    <div class="brick-block"></div>
+    <div class="brick-block"></div>
+    <div class="brick-block"></div>
+  </div>
+
+  <h1 class="title">Welcome to<br><span>SnoowBricks</span> Site</h1>
+  <p class="subtitle">Something cool is being built…</p>
+
+  <div class="divider"></div>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    Under Construction
+  </div>
+
+  <div class="snow-pile"></div>
+</div>
+
+<div class="footer">© 2026 SnoowBricks</div>
+
+<script>
+  // Generate snowflakes
+  const container = document.getElementById('snowflakes');
+  const flakes = ['❄','❅','❆','•'];
+  for(let i = 0; i < 40; i++){
+    const el = document.createElement('div');
+    el.className = 'snowflake';
+    el.textContent = flakes[Math.floor(Math.random()*flakes.length)];
+    el.style.left = Math.random()*100+'%';
+    el.style.fontSize = (Math.random()*.7+.4)+'rem';
+    el.style.opacity = Math.random()*.6+.2;
+    const dur = Math.random()*6+6;
+    el.style.animationDuration = dur+'s,'+( Math.random()*4+3)+'s';
+    el.style.animationDelay = Math.random()*-10+'s';
+    container.appendChild(el);
+  }
+</script>
+</body>
+</html>
