@@ -1,2 +1,1 @@
-# snoowbricks.github.io
-Official SnoowBricks website
+# bricks.snoow.github.io

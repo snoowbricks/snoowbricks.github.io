@@ -1,0 +1,22 @@
+:root{--primary:#db0000;--secondary:#fff;--bg:#000;--font:'Outfit',sans-serif;}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--secondary);text-align:center;}
+.hero{padding:4rem 2rem;animation:fadeIn 1s ease-out;}
+.logo{width:80px;animation:spin 8s linear infinite;filter:invert(1);}
+h1{font-size:2.5rem;margin:1.5rem 0 0.5rem;}
+.tagline{font-size:1.2rem;margin-bottom:2rem;color:#aaa;}
+.btn-group{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.btn-primary,.btn-secondary,.lang-btn{text-decoration:none;font-weight:600;padding:0.8rem 1.6rem;border-radius:30px;transition:all 0.3s ease;cursor:pointer;background:transparent;}
+.btn-primary{background:var(--primary);color:var(--secondary);}
+.btn-primary:hover{background:#b00000;}
+.btn-secondary,.lang-btn{border:2px solid var(--primary);color:var(--primary);padding:0.5rem 1.2rem;border-radius:20px;}
+.btn-secondary:hover,.lang-btn:hover,.lang-btn.active{background:var(--primary);color:var(--secondary);}
+.menu-idioma{margin-top:1rem;display:flex;justify-content:center;gap:0.5rem;}
+.social{padding:3rem 2rem;}
+.social-links img{width:40px;margin:0 10px;filter:invert(1);transition:transform 0.3s;}
+.social-links img:hover{transform:scale(1.1);}
+footer{font-size:0.9rem;padding:2rem;color:#888;}
+footer a{color:#888;text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
