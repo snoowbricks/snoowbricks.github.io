@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Coming Soon ---------- */
 .coming-soon { cursor: default; }
-.coming-soon .card-image img { filter: grayscale(1) brightness(0.7); }
+.coming-soon .card-image img { filter: grayscale(0.8) brightness(0.7) blur(2px); }
 .coming-soon:hover { transform: translateY(0); box-shadow: none; border-color: var(--border); }
 .coming-soon:hover .card-image img { transform: scale(1); }
 
