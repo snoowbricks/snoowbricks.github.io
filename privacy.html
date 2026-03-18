@@ -3,49 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Privacy Policy — Snoow</title>
+  <link rel="icon" type="image/png" href="assets/icons/snowflake.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
   <style>
-    :root { --primary: #ffffff; --secondary: #ffffff; --bg: #000000; --font: 'Outfit', sans-serif;}
-    body {margin: 0; font-family: var(--font); background-color: var(--bg); color: var(--secondary); padding: 3rem 1.5rem; max-width: 900px; margin-inline: auto; animation: fadeIn 1s ease-out both;}
-    h1, h2 {color: var(--primary); text-transform: uppercase; margin-top: 2rem; font-weight: 600;}
-    h1 {font-size: 2.2rem; text-align: center;}
-    p {line-height: 1.8; margin-bottom: 1.5rem; color: #ddd;}
-    a {color: var(--primary); text-decoration: none;}
-    a:hover {text-decoration: underline;}
-    em {color: #aaa;}
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); }}
+    /* ---------- Privacy Page Specific ---------- */
+    .privacy {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+    }
+ 
+    .privacy .section-label {
+      text-align: center;
+    }
+ 
+    .privacy-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      text-align: center;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.25s forwards;
+    }
+ 
+    .privacy-updated {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-300);
+      letter-spacing: 0.03em;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.4s forwards;
+    }
+ 
+    .privacy-section {
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s var(--ease) 0.5s forwards;
+    }
+ 
+    .privacy-section:nth-child(4) { animation-delay: 0.55s; }
+    .privacy-section:nth-child(5) { animation-delay: 0.6s; }
+    .privacy-section:nth-child(6) { animation-delay: 0.65s; }
+    .privacy-section:nth-child(7) { animation-delay: 0.7s; }
+    .privacy-section:nth-child(8) { animation-delay: 0.75s; }
+    .privacy-section:nth-child(9) { animation-delay: 0.8s; }
+    .privacy-section:nth-child(10) { animation-delay: 0.85s; }
+    .privacy-section:nth-child(11) { animation-delay: 0.9s; }
+    .privacy-section:nth-child(12) { animation-delay: 0.95s; }
+    .privacy-section:nth-child(13) { animation-delay: 1.0s; }
+ 
+    .privacy-section h2 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+ 
+    .privacy-section h2 .num {
+      font-size: 0.75rem;
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+ 
+    .privacy-section p {
+      font-size: 0.95rem;
+      color: var(--gray-200);
+      line-height: 1.8;
+    }
+ 
+    .privacy-section a {
+      color: var(--red);
+      transition: color 0.3s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+ 
+    .privacy-section a:hover {
+      color: var(--white);
+      border-bottom-color: var(--red);
+    }
+ 
+    .privacy-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 3rem;
+    }
+ 
+    @media (max-width: 600px) {
+      .privacy { padding: 7rem 1.5rem 3rem; }
+    }
   </style>
-
 </head>
 <body>
-
-  <h1>Privacy Policy</h1>
-
-  <p>Thank you for visiting our website. This Privacy Policy describes how we handle information on our website, which is a personal, non-profit project hosted on GitHub Pages.</p>
-
-  <h2>1. About Us</h2>
-  <p>This website is a personal, non-profit project and does not belong to any commercial or business organization. Our sole purpose is to provide informative content of personal interest to the general public.</p>
-
-  <h2>2. Collection and Use of Personal Information</h2>
-  <p>We do not collect, store, or process any personal or identifiable data from our visitors. We do not use cookies, tracking tools, or similar technologies to identify or track our users.</p>
-
-  <h2>3. GitHub Pages</h2>
-  <p>This website is hosted on GitHub Pages, a service provided by GitHub. GitHub may collect minimal technical information as part of its regular operation (e.g., IP address or technical information to maintain service security). For more information, you can review the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a>.</p>
-
-  <h2>4. External Links</h2>
-  <p>This website may contain links to other external websites. We are not responsible for the content or privacy practices of these external sites. We recommend reviewing their respective privacy policies.</p>
-
-  <h2>5. Security</h2>
-  <p>Although we do not store any personal information, we make our best efforts to keep our website secure and free of digital threats.</p>
-
-  <h2>6. Changes to this Privacy Policy</h2>
-  <p>We reserve the right to update this privacy policy at any time. The latest version will always be available on this page with the date of the last update clearly indicated.</p>
-
-  <h2>7. Contact</h2>
-  <p>If you have questions, comments, or concerns about this privacy policy or any aspect of this website, please feel free to contact us at <a href="mailto:hello@snoow.es">hello@snoow.es</a>.</p>
-
-  <p><em>Last updated: May 29, 2025</em></p>
-
+ 
+  <canvas id="snow-canvas"></canvas>
+  <div class="grain-overlay"></div>
+ 
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <a href="index.html" style="display:flex;align-items:center;gap:0.6rem;">
+        <img src="assets/icons/snowflake.svg" alt="Snoow" class="nav-icon">
+        <span>Snoow</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+    </div>
+  </nav>
+ 
+  <!-- Privacy Content -->
+  <main class="privacy">
+    <div class="section-label" style="opacity:0;animation:fadeUp 0.8s var(--ease) 0.1s forwards;">Legal</div>
+    <h1 class="privacy-title">Privacy Policy</h1>
+    <p class="privacy-updated">Last updated: March 18, 2025</p>
+ 
+    <div class="privacy-divider"></div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">01</span> About us</h2>
+      <p>This website is a personal, non-profit project and does not belong to any commercial or business organization. It is not affiliated with, endorsed by, or sponsored by the LEGO Group. All LEGO-related trademarks, logos, and product names are the property of the LEGO Group. Our sole purpose is to share original creations and informative content of personal interest with the community.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">02</span> Collection and use of personal information</h2>
+      <p>We do not collect, store, or process any personal or identifiable data from our visitors. We do not use cookies, tracking tools, analytics platforms, or similar technologies to identify or monitor users. Your visit to this website remains completely anonymous to us.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">03</span> Hosting on GitHub Pages</h2>
+      <p>This website is hosted on GitHub Pages, a static site hosting service provided by GitHub, Inc. As part of its regular operation, GitHub may collect minimal technical information such as IP addresses, browser type, and referring pages for security and operational purposes. This data collection is governed entirely by GitHub's own policies. For more information, please review the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank">GitHub Privacy Statement</a>.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">04</span> External links</h2>
+      <p>This website may contain links to third-party external websites, including social media platforms, the official LEGO website, and other resources. We are not responsible for the content, privacy practices, or data handling of these external sites. We recommend reviewing their respective privacy policies before providing any personal information.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">05</span> Intellectual property</h2>
+      <p>All original content on this website — including custom designs, photography, text, and code — is the intellectual property of Snoow and is protected under applicable copyright laws. LEGO is a trademark of the LEGO Group, which does not sponsor, authorize, or endorse this website. Any product names, images, or references used are for identification and informational purposes only.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">06</span> Security</h2>
+      <p>Although we do not collect or store any personal information, we make our best efforts to keep this website secure, up to date, and free from malicious code or digital threats. The website is served over HTTPS to ensure encrypted communication between your browser and our servers.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">07</span> Children's privacy</h2>
+      <p>This website is not directed at children under the age of 13 and does not knowingly collect any information from minors. Since we do not collect data from any visitor, no special provisions are required. However, we encourage parents and guardians to supervise their children's online activities.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">08</span> Changes to this policy</h2>
+      <p>We reserve the right to update or modify this privacy policy at any time. The latest version will always be available on this page with the date of the last update clearly indicated at the top. We encourage you to review this page periodically to stay informed about how we handle your privacy.</p>
+    </div>
+ 
+    <div class="privacy-section">
+      <h2><span class="num">09</span> Contact</h2>
+      <p>If you have questions, comments, or concerns about this privacy policy or any aspect of this website, please feel free to reach out to us at <a href="mailto:hello@snoow.es">hello@snoow.es</a>. We will do our best to respond in a timely manner.</p>
+    </div>
+  </main>
+ 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/icons/snowflake.svg" alt="Snoow" class="footer-logo">
+        <span class="footer-name">Snoow</span>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Snoow. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+ 
+  <script>
+    /* Snow */
+    const canvas = document.getElementById("snow-canvas");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+      const flakes = [];
+      const COUNT = Math.min(60, Math.floor(w / 18));
+      class S {
+        constructor() { this.reset(true); }
+        reset(i) { this.x = Math.random()*w; this.y = i ? Math.random()*h : -10; this.r = Math.random()*1.8+0.4; this.s = Math.random()*0.5+0.15; this.d = Math.random()*0.3-0.15; this.o = Math.random()*0.4+0.1; }
+        update() { this.y += this.s; this.x += this.d + Math.sin(this.y*0.005)*0.25; if (this.y > h+10 || this.x < -10 || this.x > w+10) this.reset(false); }
+        draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = `rgba(255,255,255,${this.o})`; ctx.fill(); }
+      }
+      for (let i = 0; i < COUNT; i++) flakes.push(new S());
+      function loop() { ctx.clearRect(0,0,w,h); flakes.forEach(f => { f.update(); f.draw(); }); requestAnimationFrame(loop); }
+      loop();
+      window.addEventListener("resize", () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+    }
+ 
+    /* Nav scroll */
+    const nav = document.querySelector(".nav");
+    if (nav) {
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 60);
+      });
+    }
+  </script>
 </body>
 </html>

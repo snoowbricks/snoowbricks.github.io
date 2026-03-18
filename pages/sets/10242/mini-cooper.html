@@ -2,31 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mini Cooper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Cooper — Snoow</title>
+  <link rel="icon" type="image/png" href="../../../assets/icons/snowflake.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/pages/styles/sets-style.css">
 </head>
 <body class="car-page">
-  <a href="../../sets.html" class="return-btn" title="Back to LEGO sets">Sets</a>
 
-  <h2>The Mini Cooper</h2>
-  <img src="images/mini-cooper-1.webp" alt="Mini Cooper">
-  <p>The original Mini was introduced in 1959 by the British Motor Corporation (BMC), designed by Sir Alec Issigonis as an answer to the fuel shortages of the time. Compact, affordable, and incredibly space-efficient, the Mini quickly became a symbol of British ingenuity. But it was the collaboration with racing legend John Cooper that transformed the humble Mini into a performance icon.</p>
+  <canvas id="snow-canvas"></canvas>
+  <div class="grain-overlay"></div>
 
-  <h2>The Birth of the Mini Cooper</h2>
-  <img src="images/mini-cooper-4.avif" alt="Mini Cooper">
-  <p>In the early 1960s, John Cooper saw the potential of the Mini's light weight and responsive handling for motorsport. With upgraded brakes, a tuned engine, and sportier suspension, the Mini Cooper and Mini Cooper S were born — small cars that could punch far above their weight. These tiny machines shocked the racing world by winning the Monte Carlo Rally multiple times during the 1960s.</p>
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="../../sets.html" class="nav-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span>Sets</span>
+    </a>
+    <div class="nav-logo">
+      <img src="../../../assets/icons/snowflake.svg" alt="Snoow" class="nav-icon">
+      <span>Snoow</span>
+    </div>
+  </nav>
 
-  <h2>Iconic Design and Compact Engineering</h2>
-  <img src="images/mini-cooper-3.jpg" alt="Mini Cooper">
-  <p>The Mini's revolutionary front-wheel-drive layout and transverse engine allowed for maximum cabin space in a tiny footprint. Its charming, boxy design became instantly recognizable, and it was adored by everyone from city drivers to rock stars. The Cooper versions added sporty details like wider wheels, twin fuel tanks, and distinctive badging, all while keeping the cars friendly personality intact.</p>
+  <!-- Hero -->
+  <section class="car-hero">
+    <div class="section-label">Set 10242</div>
+    <h1 class="car-hero-title">Mini Cooper</h1>
+    <p class="car-hero-sub">The tiny car that conquered the world — British ingenuity meets racing legend.</p>
+  </section>
 
-  <h2>Fun Behind the Wheel</h2>
-  <img src="images/mini-cooper-2.webp" alt="Mini Cooper">
-  <p>What the classic Mini Cooper lacked in straight-line speed, it made up for in agility and joy. With go-kart-like steering and a low center of gravity, it delivered an engaging and playful driving experience. Whether navigating tight corners or zipping through traffic, the Mini Cooper brought a sense of fun and confidence that larger cars simply couldn't match.</p>
+  <!-- Content -->
+  <article class="car-content">
+    <img src="images/mini-cooper-1.webp" alt="Mini Cooper">
 
-  <h2>Enduring Cultural Icon</h2>
-  <img src="images/mini-cooper-5.jpg" alt="Mini Cooper">
-  <p>The classic Mini Cooper became much more than just a car — it became a cultural icon. It starred in movies like The Italian Job, captured the hearts of enthusiasts worldwide, and remained in production (in various forms) for over four decades. Today, classic Mini Coopers are highly sought after by collectors and remain a symbol of clever design, motorsport heritage, and pure driving enjoyment.</p>
+    <h2>The Mini Cooper</h2>
+    <p>The original Mini was introduced in 1959 by the British Motor Corporation (BMC), designed by Sir Alec Issigonis as an answer to the fuel shortages of the time. Compact, affordable, and incredibly space-efficient, the Mini quickly became a symbol of British ingenuity. But it was the collaboration with racing legend John Cooper that transformed the humble Mini into a performance icon.</p>
 
+    <h2>The Birth of the Mini Cooper</h2>
+    <img src="images/mini-cooper-4.avif" alt="Mini Cooper Racing">
+    <p>In the early 1960s, John Cooper saw the potential of the Mini's light weight and responsive handling for motorsport. With upgraded brakes, a tuned engine, and sportier suspension, the Mini Cooper and Mini Cooper S were born — small cars that could punch far above their weight. These tiny machines shocked the racing world by winning the Monte Carlo Rally multiple times during the 1960s.</p>
+
+    <h2>Iconic Design and Compact Engineering</h2>
+    <img src="images/mini-cooper-3.jpg" alt="Mini Cooper Design">
+    <p>The Mini's revolutionary front-wheel-drive layout and transverse engine allowed for maximum cabin space in a tiny footprint. Its charming, boxy design became instantly recognizable, and it was adored by everyone from city drivers to rock stars. The Cooper versions added sporty details like wider wheels, twin fuel tanks, and distinctive badging, all while keeping the car's friendly personality intact.</p>
+
+    <h2>Fun Behind the Wheel</h2>
+    <img src="images/mini-cooper-2.webp" alt="Mini Cooper Driving">
+    <p>What the classic Mini Cooper lacked in straight-line speed, it made up for in agility and joy. With go-kart-like steering and a low center of gravity, it delivered an engaging and playful driving experience. Whether navigating tight corners or zipping through traffic, the Mini Cooper brought a sense of fun and confidence that larger cars simply couldn't match.</p>
+
+    <h2>Enduring Cultural Icon</h2>
+    <img src="images/mini-cooper-5.jpg" alt="Mini Cooper Icon">
+    <p>The classic Mini Cooper became much more than just a car — it became a cultural icon. It starred in movies like The Italian Job, captured the hearts of enthusiasts worldwide, and remained in production (in various forms) for over four decades. Today, classic Mini Coopers are highly sought after by collectors and remain a symbol of clever design, motorsport heritage, and pure driving enjoyment.</p>
+  </article>
+
+  <!-- Set Navigation -->
+  <nav class="set-nav">
+    <div class="set-nav-inner">
+      <a href="../10248/ferrari-f40.html" class="set-nav-card">
+        <svg class="set-nav-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <img src="../10248/images/ferrari-f40-1.jpg" alt="Ferrari F40" class="set-nav-thumb">
+        <div class="set-nav-meta">
+          <div class="set-nav-direction">Previous</div>
+          <div class="set-nav-name">Ferrari F40</div>
+        </div>
+      </a>
+      <a href="../10262/astonmartin-db5.html" class="set-nav-card is-next">
+        <svg class="set-nav-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <img src="../10262/images/astonmartin-db5-1.jpg" alt="Aston Martin DB5" class="set-nav-thumb">
+        <div class="set-nav-meta">
+          <div class="set-nav-direction">Next set</div>
+          <div class="set-nav-name">Aston Martin DB5</div>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <footer class="footer">
+    <p>&copy; 2025 Snoow. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const canvas=document.getElementById("snow-canvas");if(canvas){const ctx=canvas.getContext("2d");let w=canvas.width=window.innerWidth,h=canvas.height=window.innerHeight;const fl=[];const C=Math.min(50,Math.floor(w/20));class S{constructor(){this.reset(true)}reset(i){this.x=Math.random()*w;this.y=i?Math.random()*h:-10;this.r=Math.random()*1.8+0.4;this.s=Math.random()*0.5+0.15;this.d=Math.random()*0.3-0.15;this.o=Math.random()*0.4+0.1}update(){this.y+=this.s;this.x+=this.d+Math.sin(this.y*0.005)*0.25;if(this.y>h+10||this.x<-10||this.x>w+10)this.reset(false)}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${this.o})`;ctx.fill()}}for(let i=0;i<C;i++)fl.push(new S());function loop(){ctx.clearRect(0,0,w,h);fl.forEach(f=>{f.update();f.draw()});requestAnimationFrame(loop)}loop();window.addEventListener("resize",()=>{w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight})}
+    const obs=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add("revealed");obs.unobserve(en.target)}})},{threshold:0.1,rootMargin:"0px 0px -30px 0px"});document.querySelectorAll(".car-content > *").forEach(el=>obs.observe(el));
+  </script>
 </body>
 </html>

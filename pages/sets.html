@@ -2,54 +2,185 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LEGO Sets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEGO Sets — Snoow</title>
+  <link rel="icon" type="image/png" href="../assets/icons/snowflake.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/sets-style.css">
 </head>
 <body>
-  <a href="../index.html" class="return-btn" title="Go back to homepage">Home</a>
-  <h1 class="page-title">LEGO Sets</h1>
 
-  <div class="grid">
-    <a href="sets/10295/porsche-911.html" class="set-card">
-      <img src="sets/10295/images/porsche-911-turbo.jpg" alt="Porsche 911">
-      <div class="set-card-title">Porsche 911</div>
+  <canvas id="snow-canvas"></canvas>
+  <div class="grain-overlay"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="../index.html" class="nav-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span>Home</span>
     </a>
+    <div class="nav-logo">
+      <img src="../assets/icons/snowflake.svg" alt="Snoow" class="nav-icon">
+      <span>Snoow</span>
+    </div>
+  </nav>
 
-    <a href="sets/10248/ferrari-f40.html" class="set-card">
-      <img src="sets/10248/images/ferrari-f40-1.jpg" alt="Ferrari F40">
-      <div class="set-card-title">Ferrari F40</div>
-    </a>
+  <!-- Header -->
+  <section class="page-header">
+    <div class="section-label">Collection</div>
+    <h1 class="page-title">LEGO Sets</h1>
+    <p class="page-subtitle">Explore our custom builds — from classic cars to iconic machines</p>
+  </section>
 
-    <a href="sets/10242/mini-cooper.html" class="set-card">
-      <img src="sets/10242/images/mini-cooper-1.webp" alt="Mini Cooper">
-      <div class="set-card-title">Mini Cooper</div>
-    </a>
+  <!-- Grid -->
+  <section class="grid-section">
+    <div class="grid">
 
-    <a href="sets/10262/astonmartin-db5.html" class="set-card">
-      <img src="sets/10262/images/astonmartin-db5-1.jpg" alt="Aston Martin DB5">
-      <div class="set-card-title">Aston Martin DB5</div>
-    </a>
+      <a href="sets/10295/porsche-911.html" class="set-card">
+        <div class="card-image">
+          <img src="sets/10295/images/porsche-911-turbo.jpg" alt="Porsche 911">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10295</span>
+          <h3 class="card-name">Porsche 911</h3>
+          <div class="card-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
 
-    <a href="sets.html" class="set-card">
-      <img src="sets/10264/images/ford-mustang-1.jpg" alt="Ford Mustang">
-      <div class="set-card-title">Ford Mustang (Coming soon...)</div>
-    </a>
+      <a href="sets/10248/ferrari-f40.html" class="set-card">
+        <div class="card-image">
+          <img src="sets/10248/images/ferrari-f40-1.jpg" alt="Ferrari F40">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10248</span>
+          <h3 class="card-name">Ferrari F40</h3>
+          <div class="card-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
 
-    <a href="sets.html" class="set-card">
-      <img src="sets/10271/images/fiat-500-1.jpg" alt="Fiat 500">
-      <div class="set-card-title">Fiat 500 (Coming soon...)</div>
-    </a>
+      <a href="sets/10242/mini-cooper.html" class="set-card">
+        <div class="card-image">
+          <img src="sets/10242/images/mini-cooper-1.webp" alt="Mini Cooper">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10242</span>
+          <h3 class="card-name">Mini Cooper</h3>
+          <div class="card-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
 
-    <a href="sets.html" class="set-card">
-      <img src="sets/10220/images/volkswagen-t1-1.jpg" alt="Volkswagen T1">
-      <div class="set-card-title">Volkswagen T1 (Coming soon...)</div>
-    </a>
+      <a href="sets/10262/astonmartin-db5.html" class="set-card">
+        <div class="card-image">
+          <img src="sets/10262/images/astonmartin-db5-1.jpg" alt="Aston Martin DB5">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10262</span>
+          <h3 class="card-name">Aston Martin DB5</h3>
+          <div class="card-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
 
-    <a href="sets.html" class="set-card">
-      <img src="sets/10300/images/delorean-1.webp" alt="Deloren DMC12">
-      <div class="set-card-title">Delorean DMC-12 (Coming soon...)</div>
-    </a>
+      <div class="set-card coming-soon">
+        <div class="card-image">
+          <img src="sets/10265/images/ford-mustang-1.jpg" alt="Ford Mustang">
+          <div class="card-overlay"></div>
+          <div class="card-badge">Coming soon</div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10265</span>
+          <h3 class="card-name">Ford Mustang</h3>
+        </div>
+      </div>
 
-  </div>
+      <div class="set-card coming-soon">
+        <div class="card-image">
+          <img src="sets/10271/images/fiat-500-1.jpg" alt="Fiat 500">
+          <div class="card-overlay"></div>
+          <div class="card-badge">Coming soon</div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10271</span>
+          <h3 class="card-name">Fiat 500</h3>
+        </div>
+      </div>
+
+      <div class="set-card coming-soon">
+        <div class="card-image">
+          <img src="sets/10220/images/volkswagen-t1-1.jpg" alt="Volkswagen T1">
+          <div class="card-overlay"></div>
+          <div class="card-badge">Coming soon</div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10220</span>
+          <h3 class="card-name">Volkswagen T1</h3>
+        </div>
+      </div>
+
+      <div class="set-card coming-soon">
+        <div class="card-image">
+          <img src="sets/10300/images/delorean-1.webp" alt="Delorean DMC-12">
+          <div class="card-overlay"></div>
+          <div class="card-badge">Coming soon</div>
+        </div>
+        <div class="card-info">
+          <span class="card-id">10300</span>
+          <h3 class="card-name">Delorean DMC-12</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Snoow. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /* Snow */
+    const canvas = document.getElementById("snow-canvas");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let w = canvas.width = window.innerWidth;
+      let h = canvas.height = window.innerHeight;
+      const flakes = [];
+      const COUNT = Math.min(60, Math.floor(w / 18));
+      class S {
+        constructor() { this.reset(true); }
+        reset(i) { this.x = Math.random()*w; this.y = i ? Math.random()*h : -10; this.r = Math.random()*1.8+0.4; this.s = Math.random()*0.5+0.15; this.d = Math.random()*0.3-0.15; this.o = Math.random()*0.4+0.1; }
+        update() { this.y += this.s; this.x += this.d + Math.sin(this.y*0.005)*0.25; if (this.y > h+10 || this.x < -10 || this.x > w+10) this.reset(false); }
+        draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = `rgba(255,255,255,${this.o})`; ctx.fill(); }
+      }
+      for (let i = 0; i < COUNT; i++) flakes.push(new S());
+      function loop() { ctx.clearRect(0,0,w,h); flakes.forEach(f => { f.update(); f.draw(); }); requestAnimationFrame(loop); }
+      loop();
+      window.addEventListener("resize", () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
+    }
+
+    /* Scroll reveal */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const siblings = entry.target.parentElement.children;
+          const i = Array.from(siblings).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add("visible"), i * 80);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".set-card").forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
