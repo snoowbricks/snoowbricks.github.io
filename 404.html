@@ -3,19 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404 - Page Not Found</title>
-  <link rel="stylesheet" href="/styles/style.css" />
+  <title>404 — Snoow</title>
+  <link rel="icon" type="image/png" href="assets/icons/snowflake.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <div class="hero">
-    <h1>404</h1>
-    <p class="tagline">Oops! The page you're looking for doesn't exist.</p>
-    <a href="/" class="btn-primary">Back to Home</a>
-    <p class="tagline" style="margin-top:3rem;">
-      If you believe this is an error,<br>
-      contact us at <a href="mailto:hello@snoow.es" style="color:var(--secondary);text-decoration:underline;">hello@snoow.es</a>
+
+  <canvas id="snow-canvas"></canvas>
+  <div class="grain-overlay"></div>
+
+  <nav class="nav">
+    <div class="nav-logo">
+      <a href="/" style="display:flex;align-items:center;gap:0.6rem;">
+        <img src="assets/icons/snowflake.svg" alt="Snoow" class="nav-icon">
+        <span>Snoow</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+    </div>
+  </nav>
+
+  <main class="error-page">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-text">The brick you're looking for seems to be missing from this set. It might have been moved, renamed, or never existed.</p>
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">
+        <span>Back to Home</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/pages/sets.html" class="btn btn-ghost">
+        <span>Browse Sets</span>
+      </a>
+    </div>
+    <p class="error-contact">
+      Think this is an error?<br>
+      Let us know at <a href="mailto:hello@snoow.es">hello@snoow.es</a>
     </p>
-  </div>
-  <footer>&copy; 2025 Snoow. All rights reserved.</footer>
+    <div class="error-footer">&copy; 2025 Snoow. All rights reserved.</div>
+  </main>
+
+  <script>
+    const canvas=document.getElementById("snow-canvas");if(canvas){const ctx=canvas.getContext("2d");let w=canvas.width=window.innerWidth,h=canvas.height=window.innerHeight;const fl=[];const C=Math.min(50,Math.floor(w/20));class S{constructor(){this.reset(true)}reset(i){this.x=Math.random()*w;this.y=i?Math.random()*h:-10;this.r=Math.random()*1.8+0.4;this.s=Math.random()*0.5+0.15;this.d=Math.random()*0.3-0.15;this.o=Math.random()*0.4+0.1}update(){this.y+=this.s;this.x+=this.d+Math.sin(this.y*0.005)*0.25;if(this.y>h+10||this.x<-10||this.x>w+10)this.reset(false)}draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${this.o})`;ctx.fill()}}for(let i=0;i<C;i++)fl.push(new S());function loop(){ctx.clearRect(0,0,w,h);fl.forEach(f=>{f.update();f.draw()});requestAnimationFrame(loop)}loop();window.addEventListener("resize",()=>{w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight})}
+  </script>
 </body>
 </html>
