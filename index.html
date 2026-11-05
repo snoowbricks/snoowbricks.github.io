@@ -1,144 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-lang="es" data-title-es="snoowbricks — Creatividad construida, pieza a pieza" data-title-en="snoowbricks — Creativity built, piece by piece">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Snoowbricks</title>
-  <link rel="icon" type="image/png" href="assets/icons/snowflake.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>snoowbricks — Creatividad construida, pieza a pieza</title>
+  <meta name="description" content="snoowbricks: sets de LEGO montados y reseñados, con la historia de cada uno y opinión real, de fan a fan.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/Syne.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function(d){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=/^es\b/i.test(navigator.language||"")?"es":"en"}d.lang=l;d.setAttribute("data-lang",l);var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}d.setAttribute("data-theme",t);d.className+=" js"})(document.documentElement)</script>
 </head>
 <body>
+<a class="skip-link" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<canvas id="snow-canvas" aria-hidden="true"></canvas>
+<div class="grain-overlay" aria-hidden="true"></div>
 
-  <!-- Snow canvas background -->
-  <canvas id="snow-canvas"></canvas>
-
-  <!-- Grain overlay -->
-  <div class="grain-overlay"></div>
-
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-logo">
-      <img src="assets/icons/snowflake.svg" alt="Snoow" class="nav-icon">
-      <span>SnoowBricks</span>
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#social">Connect</a>
-      <a href="pages/instructions.html">Downloads</a>
-      <a href="pages/sets.html">Sets</a>
-    </div>
-    <button class="nav-hamburger" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<header class="nav">
+  <a class="nav-logo" href="index.html" data-aria-es="snoowbricks, inicio" data-aria-en="snoowbricks, home" aria-label="snoowbricks, inicio">
+    <img class="for-dark" src="assets/logo/logo-oscuro.svg" alt="" width="200" height="26">
+    <img class="for-light" src="assets/logo/logo-claro.svg" alt="" width="200" height="26">
+  </a>
+  <nav class="nav-links" data-aria-es="Principal" data-aria-en="Main" aria-label="Principal">
+      <a href="index.html" aria-current="page"><span lang="es">Inicio</span><span lang="en">Home</span></a>
+      <a href="sets/index.html"><span lang="es">Sets</span><span lang="en">Sets</span></a>
+      <a href="instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a>
+      <a href="index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+      <a href="index.html#social"><span lang="es">Redes</span><span lang="en">Connect</span></a>
   </nav>
-  <div class="mobile-menu">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#social">Connect</a>
-  <a href="pages/instructions.html">Downloads</a>
-  <a href="pages/sets.html">Sets</a>
-</div>
-
-  <!-- Hero -->
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Cambiar a modo claro">
+      <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="lang-toggle" type="button" aria-label="Switch to English"><span data-l="es">ES</span><span data-l="en">EN</span></button>
+    <button class="nav-hamburger" type="button" aria-expanded="false" aria-controls="mobile-menu" data-aria-es="Abrir menú" data-aria-en="Open menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-hidden="true" data-aria-es="Menú" data-aria-en="Menu" aria-label="Menú">
+  <a href="index.html" aria-current="page"><span lang="es">Inicio</span><span lang="en">Home</span></a>
+  <a href="sets/index.html"><span lang="es">Sets</span><span lang="en">Sets</span></a>
+  <a href="instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a>
+  <a href="index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+  <a href="index.html#social"><span lang="es">Redes</span><span lang="en">Connect</span></a>
+</nav>
+<main id="main">
   <section id="home" class="hero">
-    <div class="hero-badge">EST. 2025</div>
-    <h1 class="hero-title">
-      <span class="line line-1">Snoow</span>
-      <span class="line line-2">bricks</span>
-    </h1>
-    <p class="hero-tagline">Creativity built, piece by piece</p>
+    <img class="hero-mark for-dark" src="assets/logo/icono-oscuro.svg" alt="" width="64" height="77">
+    <img class="hero-mark for-light" src="assets/logo/icono-claro.svg" alt="" width="64" height="77">
+    <div class="hero-badge"><span lang="es">Desde 2025</span><span lang="en">Est. 2025</span></div>
+    <h1 class="hero-title"><span class="line line-1">snoow</span><span class="line line-2">bricks</span></h1>
+    <p class="hero-tagline"><span lang="es">Creatividad construida, pieza a pieza.</span><span lang="en">Creativity built, piece by piece.</span></p>
     <div class="hero-actions">
-      <a href="pages/sets.html" class="btn btn-primary">
-        <span>Explore Sets</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="pages/instructions.html" class="btn btn-ghost">
-        <span>Downloads</span>
-      </a>
+      <a href="sets/index.html" class="btn btn-primary"><span lang="es">Ver los sets</span><span lang="en">Explore sets</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="instructions/index.html" class="btn btn-ghost"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a>
     </div>
-    <div class="scroll-hint">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
+    <div class="scroll-hint" aria-hidden="true"><div class="scroll-line"></div><span>Scroll</span></div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="section-container">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Building worlds<br>one brick at a time</h2>
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label"><span lang="es">Sobre mí</span><span lang="en">About</span></div>
+      <h2 class="section-title"><span lang="es">Construyendo mundos,<br>ladrillo a ladrillo</span><span lang="en">Building worlds<br>one brick at a time</span></h2>
       <div class="about-grid">
-        <div class="about-card">
+        <article class="about-card reveal">
           <div class="card-number">01</div>
-          <h3>Custom Sets</h3>
-          <p>Original LEGO creations designed with passion and precision.</p>
-        </div>
-        <div class="about-card">
+          <h3>Sets</h3>
+          <p lang="es">Los sets que monto, con la historia de lo que representan y mi opinión de fan a fan.</p><p lang="en">The sets I build, with the story behind them and my take as a fan.</p>
+        </article>
+        <article class="about-card reveal">
           <div class="card-number">02</div>
-          <h3>Instructions</h3>
-          <p>Step-by-step downloadable guides to bring every build to life.</p>
-        </div>
-        <div class="about-card">
+          <h3><span lang="es">Instrucciones</span><span lang="en">Instructions</span></h3>
+          <p lang="es">Enlaces directos a las instrucciones oficiales de cada set para que puedas montarlo tú.</p><p lang="en">Direct links to the official building instructions for every set, so you can build it too.</p>
+        </article>
+        <article class="about-card reveal">
           <div class="card-number">03</div>
-          <h3>Community</h3>
-          <p>Join a growing community of builders and creators worldwide.</p>
+          <h3><span lang="es">Comunidad</span><span lang="en">Community</span></h3>
+          <p lang="es">Únete a una comunidad de constructores y creadores que no para de crecer.</p><p lang="en">Join a growing community of builders and creators worldwide.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="latest" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-label">Sets</div>
+          <h2 class="section-title"><span lang="es">Últimos montajes</span><span lang="en">Latest builds</span></h2>
         </div>
+        <a class="link-more" href="sets/index.html"><span lang="es">Ver todos</span><span lang="en">See all</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="grid">
+      <a href="sets/porsche-911/index.html" class="set-card reveal">
+        <div class="card-image"><img src="assets/img/sets/10295/porsche-911-main.webp" alt="Porsche 911" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10295</span>
+          <h3 class="card-name">Porsche 911</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="sets/ferrari-f40/index.html" class="set-card reveal">
+        <div class="card-image"><img src="assets/img/sets/10248/ferrari-f40-main.webp" alt="Ferrari F40" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10248</span>
+          <h3 class="card-name">Ferrari F40</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="sets/mini-cooper/index.html" class="set-card reveal">
+        <div class="card-image"><img src="assets/img/sets/10242/mini-cooper-main.webp" alt="Mini Cooper" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10242</span>
+          <h3 class="card-name">Mini Cooper</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="sets/aston-martin-db5/index.html" class="set-card reveal">
+        <div class="card-image"><img src="assets/img/sets/10262/aston-martin-main.webp" alt="Aston Martin DB5" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10262</span>
+          <h3 class="card-name">Aston Martin DB5</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
       </div>
     </div>
   </section>
 
-  <!-- Social -->
-  <section id="social" class="social">
-    <div class="section-container">
-      <div class="section-label">Connect</div>
-      <h2 class="section-title">Follow the build</h2>
+  <section id="social" class="section">
+    <div class="container">
+      <div class="section-label"><span lang="es">Redes</span><span lang="en">Connect</span></div>
+      <h2 class="section-title"><span lang="es">Sigue el montaje</span><span lang="en">Follow the build</span></h2>
       <div class="social-grid">
-        <a href="https://www.instagram.com/snoowbricks/" target="_blank" class="social-card">
-          <div class="social-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-          </div>
-          <span class="social-name">Instagram</span>
-          <span class="social-handle">@snoowbricks</span>
+        <a href="https://www.instagram.com/snoowbricks/" target="_blank" rel="noopener" class="social-card reveal">
+          <span class="social-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+          <span class="social-text"><span class="social-name">Instagram</span><span class="social-handle">@snoowbricks</span></span>
+          <span class="social-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         </a>
-        <a href="https://www.youtube.com/@snoow-eu" target="_blank" class="social-card">
-          <div class="social-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
-            </svg>
-          </div>
-          <span class="social-name">YouTube</span>
-          <span class="social-handle">@snoow-eu</span>
+        <a href="https://www.youtube.com/@snoow-eu" target="_blank" rel="noopener" class="social-card reveal">
+          <span class="social-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></span>
+          <span class="social-text"><span class="social-name">YouTube</span><span class="social-handle">@snoow-eu</span></span>
+          <span class="social-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
         </a>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="assets/icons/snowflake.svg" alt="Snoow" class="footer-logo">
-        <span class="footer-name">Snoow</span>
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:hello@snoowbricks.com">hello@snoowbricks.com</a>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Snoow. All rights reserved.</p>
-        <a href="privacy.html" target="_blank">Privacy Policy</a>
-      </div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img class="for-dark" src="assets/logo/logo-oscuro.svg" alt="snoowbricks" width="200" height="26" loading="lazy">
+      <img class="for-light" src="assets/logo/logo-claro.svg" alt="snoowbricks" width="200" height="26" loading="lazy">
+      <p lang="es">Opinión real, de fan a fan.</p><p lang="en">Honest takes, from one fan to another.</p>
     </div>
-  </footer>
+    <div class="footer-col">
+      <h2><span lang="es">Explorar</span><span lang="en">Explore</span></h2>
+      <ul>
+        <li><a href="sets/index.html">Sets</a></li>
+        <li><a href="instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a></li>
+        <li><a href="index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+        <li><a href="privacy/index.html"><span lang="es">Privacidad</span><span lang="en">Privacy</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
+      <ul>
+        <li><a href="https://www.instagram.com/snoowbricks/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@snoow-eu" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:hello@snoowbricks.com">hello@snoowbricks.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 snoowbricks</p>
+    <p lang="es">LEGO® es una marca registrada del Grupo LEGO, que no patrocina, autoriza ni respalda esta web.</p><p lang="en">LEGO® is a trademark of the LEGO Group, which does not sponsor, authorize, or endorse this site.</p>
+  </div>
+</footer>
 
-  <script src="js/script.js"></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
