@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es" data-title-es="Sets de LEGO — snoowbricks" data-title-en="LEGO Sets — snoowbricks">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sets de LEGO — snoowbricks</title>
+  <meta name="description" content="Los sets de LEGO que he montado, con su historia y mi opinión.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/Syne.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>(function(d){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="es"&&l!=="en"){l=/^es\b/i.test(navigator.language||"")?"es":"en"}d.lang=l;d.setAttribute("data-lang",l);var t;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}d.setAttribute("data-theme",t);d.className+=" js"})(document.documentElement)</script>
+</head>
+<body>
+<a class="skip-link" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
+<canvas id="snow-canvas" aria-hidden="true"></canvas>
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav-logo" href="../index.html" data-aria-es="snoowbricks, inicio" data-aria-en="snoowbricks, home" aria-label="snoowbricks, inicio">
+    <img class="for-dark" src="../assets/logo/logo-oscuro.svg" alt="" width="200" height="26">
+    <img class="for-light" src="../assets/logo/logo-claro.svg" alt="" width="200" height="26">
+  </a>
+  <nav class="nav-links" data-aria-es="Principal" data-aria-en="Main" aria-label="Principal">
+      <a href="../index.html"><span lang="es">Inicio</span><span lang="en">Home</span></a>
+      <a href="../sets/index.html" aria-current="page"><span lang="es">Sets</span><span lang="en">Sets</span></a>
+      <a href="../instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a>
+      <a href="../index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+      <a href="../index.html#social"><span lang="es">Redes</span><span lang="en">Connect</span></a>
+  </nav>
+  <div class="nav-actions">
+    <button class="theme-toggle" type="button" aria-label="Cambiar a modo claro">
+      <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="lang-toggle" type="button" aria-label="Switch to English"><span data-l="es">ES</span><span data-l="en">EN</span></button>
+    <button class="nav-hamburger" type="button" aria-expanded="false" aria-controls="mobile-menu" data-aria-es="Abrir menú" data-aria-en="Open menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-hidden="true" data-aria-es="Menú" data-aria-en="Menu" aria-label="Menú">
+  <a href="../index.html"><span lang="es">Inicio</span><span lang="en">Home</span></a>
+  <a href="../sets/index.html" aria-current="page"><span lang="es">Sets</span><span lang="en">Sets</span></a>
+  <a href="../instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a>
+  <a href="../index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+  <a href="../index.html#social"><span lang="es">Redes</span><span lang="en">Connect</span></a>
+</nav>
+<main id="main">
+  <header class="page-header">
+    <div class="section-label"><span lang="es">Colección</span><span lang="en">Collection</span></div>
+    <h1 class="page-title"><span lang="es">Sets de LEGO</span><span lang="en">LEGO Sets</span></h1>
+    <p class="page-subtitle"><span lang="es">Los sets que he montado, con su historia y mi opinión.</span><span lang="en">The sets I've built, with their story and my take.</span></p>
+  </header>
+  <section class="grid-section" data-aria-es="Sets" data-aria-en="Sets" aria-label="Sets">
+    <div class="grid">
+      <a href="porsche-911/index.html" class="set-card reveal">
+        <div class="card-image"><img src="../assets/img/sets/10295/porsche-911-main.webp" alt="Porsche 911" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10295</span>
+          <h3 class="card-name">Porsche 911</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="ferrari-f40/index.html" class="set-card reveal">
+        <div class="card-image"><img src="../assets/img/sets/10248/ferrari-f40-main.webp" alt="Ferrari F40" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10248</span>
+          <h3 class="card-name">Ferrari F40</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="mini-cooper/index.html" class="set-card reveal">
+        <div class="card-image"><img src="../assets/img/sets/10242/mini-cooper-main.webp" alt="Mini Cooper" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10242</span>
+          <h3 class="card-name">Mini Cooper</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="aston-martin-db5/index.html" class="set-card reveal">
+        <div class="card-image"><img src="../assets/img/sets/10262/aston-martin-main.webp" alt="Aston Martin DB5" width="1400" height="789" loading="lazy" decoding="async"></div>
+        <div class="card-info">
+          <span class="card-id">10262</span>
+          <h3 class="card-name">Aston Martin DB5</h3>
+          <span class="card-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <div class="set-card coming-soon reveal">
+        <div class="card-image"><img src="../assets/img/sets/10265/ford-mustang-main.webp" alt="Ford Mustang" width="1400" height="789" loading="lazy" decoding="async"><span class="card-badge"><span lang="es">Próximamente</span><span lang="en">Coming soon</span></span></div>
+        <div class="card-info">
+          <span class="card-id">10265</span>
+          <h3 class="card-name">Ford Mustang</h3>
+        </div>
+      </div>
+      <div class="set-card coming-soon reveal">
+        <div class="card-image"><img src="../assets/img/sets/10271/fiat-500-main.webp" alt="Fiat 500" width="1400" height="789" loading="lazy" decoding="async"><span class="card-badge"><span lang="es">Próximamente</span><span lang="en">Coming soon</span></span></div>
+        <div class="card-info">
+          <span class="card-id">10271</span>
+          <h3 class="card-name">Fiat 500</h3>
+        </div>
+      </div>
+      <div class="set-card coming-soon reveal">
+        <div class="card-image"><img src="../assets/img/sets/10220/volkswagen-t1-main.webp" alt="Volkswagen T1" width="1400" height="789" loading="lazy" decoding="async"><span class="card-badge"><span lang="es">Próximamente</span><span lang="en">Coming soon</span></span></div>
+        <div class="card-info">
+          <span class="card-id">10220</span>
+          <h3 class="card-name">Volkswagen T1</h3>
+        </div>
+      </div>
+      <div class="set-card coming-soon reveal">
+        <div class="card-image"><img src="../assets/img/sets/10300/delorean-main.webp" alt="DeLorean DMC-12" width="1400" height="789" loading="lazy" decoding="async"><span class="card-badge"><span lang="es">Próximamente</span><span lang="en">Coming soon</span></span></div>
+        <div class="card-info">
+          <span class="card-id">10300</span>
+          <h3 class="card-name">DeLorean DMC-12</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img class="for-dark" src="../assets/logo/logo-oscuro.svg" alt="snoowbricks" width="200" height="26" loading="lazy">
+      <img class="for-light" src="../assets/logo/logo-claro.svg" alt="snoowbricks" width="200" height="26" loading="lazy">
+      <p lang="es">Opinión real, de fan a fan.</p><p lang="en">Honest takes, from one fan to another.</p>
+    </div>
+    <div class="footer-col">
+      <h2><span lang="es">Explorar</span><span lang="en">Explore</span></h2>
+      <ul>
+        <li><a href="../sets/index.html">Sets</a></li>
+        <li><a href="../instructions/index.html"><span lang="es">Instrucciones</span><span lang="en">Instructions</span></a></li>
+        <li><a href="../index.html#about"><span lang="es">Sobre mí</span><span lang="en">About</span></a></li>
+        <li><a href="../privacy/index.html"><span lang="es">Privacidad</span><span lang="en">Privacy</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
+      <ul>
+        <li><a href="https://www.instagram.com/snoowbricks/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com/@snoow-eu" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="mailto:hello@snoowbricks.com">hello@snoowbricks.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 snoowbricks</p>
+    <p lang="es">LEGO® es una marca registrada del Grupo LEGO, que no patrocina, autoriza ni respalda esta web.</p><p lang="en">LEGO® is a trademark of the LEGO Group, which does not sponsor, authorize, or endorse this site.</p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
